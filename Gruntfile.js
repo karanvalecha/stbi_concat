@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     return pathInfo;
   };
 
-  const concatConfig = grunt.file.readJSON("concat.yml");
+  const concatConfig = grunt.file.readJSON("concat.json");
 
   const srcPath = parseConcatConfig("src", concatConfig);
   const destPath = parseConcatConfig("dest", concatConfig);
