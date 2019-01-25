@@ -26,7 +26,7 @@ module.exports = function(grunt) {
           ...srcPath.application_css,
           ...srcPath.html
         ],
-        tasks: ["concat"],
+        tasks: ["concat", "babel"],
         options: {
           spawn: false
         }
@@ -49,11 +49,29 @@ module.exports = function(grunt) {
         src: srcPath.html,
         dest: destPath.html[0]
       }
+    },
+    babel: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: {
+          "../stbi_server/public/stbi/scripts/application.js":
+            destPath.application_js[0],
+          "../stbi_server/public/stbi/scripts/initialization.js":
+            destPath.initialization_js[0],
+          "../stbi_server/public/stbi/css/application.css":
+            destPath.application_css[0]
+        }
+      },
+      plugins: ["css-modules-transform"]
     }
   });
 
+  grunt.loadNpmTasks("grunt-babel");
+
   // Default task
-  grunt.registerTask("build:dev", ["concat:dev", "watch"]);
+  grunt.registerTask("build:dev", ["concat:dev", "babel", "watch"]);
 
   // Concatination for all
   grunt.registerTask("concat:dev", ["concat"]);

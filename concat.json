@@ -151,7 +151,6 @@
 		]
 	},
 	"dest": {
-		"html": "<%= config.server_path %>/public/index.html",
 		"application_css":
 			"<%= config.server_path %>/public/stbi/css/application.css",
 		"application_js":
