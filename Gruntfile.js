@@ -44,10 +44,6 @@ module.exports = function(grunt) {
       application_css: {
         src: srcPath.application_css,
         dest: destPath.application_css[0]
-      },
-      html: {
-        src: srcPath.html,
-        dest: destPath.html[0]
       }
     },
     babel: {
