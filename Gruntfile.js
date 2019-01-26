@@ -13,9 +13,9 @@ module.exports = function(grunt) {
   };
 
   const concatConfig = grunt.file.readJSON("concat.json");
-
   const srcPath = parseConcatConfig("src", concatConfig);
   const destPath = parseConcatConfig("dest", concatConfig);
+  console.log(destPath.application_css[0]);
 
   grunt.initConfig({
     watch: {
@@ -52,11 +52,11 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "../stbi_server/public/stbi/scripts/application.js":
+          "../stbi_server/public/stbi/scripts/application.js.gz":
             destPath.application_js[0],
-          "../stbi_server/public/stbi/scripts/initialization.js":
+          "../stbi_server/public/stbi/scripts/initialization.js.gz":
             destPath.initialization_js[0],
-          "../stbi_server/public/stbi/css/application.css":
+          "../stbi_server/public/stbi/css/application.css.gz":
             destPath.application_css[0]
         }
       },
