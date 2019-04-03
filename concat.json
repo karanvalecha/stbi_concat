@@ -6,7 +6,6 @@
 		"gui_initialization_js_path": "<%= config.gui_path %>/STBI Javascript - Initialization"
 	},
 	"src": {
-		"html": "index.html.example",
 		"application_css": "<%= config.gui_path %>/STBI Css/*/*.css",
 		"application_js": [
 			"<%= config.gui_application_js_path %>/stbi.js",
@@ -151,7 +150,6 @@
 		]
 	},
 	"dest": {
-		"html": "<%= config.server_path %>/public/index.html",
 		"application_css":
 			"<%= config.server_path %>/public/stbi/css/application.css",
 		"application_js":
